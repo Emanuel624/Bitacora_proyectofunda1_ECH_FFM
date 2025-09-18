@@ -8,6 +8,7 @@
 % Márgenes y formato
 \usepackage[left=3cm,right=2.5cm,top=3cm,bottom=3cm]{geometry}
 \usepackage{fancyhdr}
+\usepackage{float}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{Bitácora de Proyecto}
@@ -90,6 +91,13 @@ Se comenzó con el desarrollo del proyecto en una etapa básica.
     \item Se compraron dos sensores de choque (\textit{shock}) de manera preliminar para comprobar si sirven para los objetivos del proyecto.
 \end{itemize}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{images/sensor.jpg} % ruta del archivo
+    \caption{Sensores de choque adquiridos para el proyecto.}
+    \label{fig:sensores}
+\end{figure}
+
 \subsection*{Resultados obtenidos}
 Se generó un plan de trabajo inicial.
 
@@ -104,16 +112,22 @@ Se generó un plan de trabajo inicial.
 \begin{itemize}
     \item Se definió el uso del programa Logisim-Evolution para la simulación.
     \item Surgieron nuevas dudas, esperando ser resueltas por parte del profesor.
-    \item Se definió un circuito serializador, a la espera de ser aprobado por el profesor.
+    \item Se definió un circuito serializador, a la espera de ser aprobado por el profesor. Utilizando el circuito integrado 74LS164 de primera manera simulado, como se muestra en la siguiente figura, para comprobar el funcionamiento
 \end{itemize}
 
 \subsection*{Resultados obtenidos}
-Se contó con el circuito serializador de manera preliminar, terminado.
+Se contó con el circuito serializador de manera preliminar, simulado.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{images/serializador_sim.png} % ruta del archivo
+    \caption{Circuito serializador simulado en Logisim-Evolution}
+    \label{fig:serializador_sim}
+\end{figure}
 
 \subsection*{Próximos pasos}
 \begin{itemize}
     \item Resolver las dudas con el profesor lo más pronto posible.
-    \item Intentar definir qué circuitos integrados comprar.
+    \item Definir qué circuitos integrados comprar, tanto para serializador, compuerta y BCD.
     \item Trabajar simultáneamente tanto en el taller como en el proyecto.
 \end{itemize}
 
@@ -123,29 +137,102 @@ Se contó con el circuito serializador de manera preliminar, terminado.
     \item Se resolvieron las dudas con el profesor.
     \item Se comenzó con la construcción del circuito combinatorio para reconocer el patrón por medio de simulación.
     \item Se definió el BCD a utilizar en el proyecto/taller.
-    \item Se planteó que, en el display de 7 segmentos, se muestre un 1 o un 2 dependiendo de si se abre o se cierra.
+    \item Se planteó el uso de 7 segmentos y como plantear la lógica.
 \end{itemize}
 
 \subsection*{Resultados obtenidos}
-Se avanzó de forma significativa en el proyecto/taller.
+De manera especifica se va a mostrar el desarrollo teorico para el proceso del circuito combinatorio para recibir la contraseña de abrir y cerrar la puerta.
+\section*{Definición de los Patrones}
+El sistema debe reconocer dos patrones de entrada:
+
+\begin{itemize}
+  \item \textbf{Abrir}: El patrón de \textbf{Abrir} es \texttt{10110011}, donde:
+    \begin{itemize}
+      \item $Q_7 = 1$
+      \item $Q_6 = 0$
+      \item $Q_5 = 1$
+      \item $Q_4 = 1$
+      \item $Q_3 = 0$
+      \item $Q_2 = 0$
+      \item $Q_1 = 1$
+      \item $Q_0 = 1$
+    \end{itemize}
+  \item \textbf{Cerrar}: El patrón de \textbf{Cerrar} es \texttt{11101000}, donde:
+    \begin{itemize}
+      \item $Q_7 = 1$
+      \item $Q_6 = 1$
+      \item $Q_5 = 1$
+      \item $Q_4 = 0$
+      \item $Q_3 = 1$
+      \item $Q_2 = 0$
+      \item $Q_1 = 0$
+      \item $Q_0 = 0$
+    \end{itemize}
+\end{itemize}
+
+\section*{Tabla de Verdad}
+
+A continuación se presenta la tabla de verdad que muestra las combinaciones de las entradas \( Q_7, Q_6, \ldots, Q_0 \) y las salidas correspondientes **ABRIR** y **CERRAR**.
+
+\[
+\begin{array}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Q_7 & Q_6 & Q_5 & Q_4 & Q_3 & Q_2 & Q_1 & Q_0 & \text{ABRIR} & \text{CERRAR} \\
+\hline
+1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 0 \\
+1 & 1 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 \\
+\hline
+\end{array}
+\]
+
+\section*{Desarrollo de la Lógica Combinatoria}
+
+\subsection*{Ecuación para el patrón \textit{Abrir}}
+El patrón de entrada para abrir la puerta es \texttt{10110011}. La ecuación lógica para detectar este patrón es la siguiente:
+
+\[
+\text{ABRIR} = Q_7 \cdot \neg Q_6 \cdot Q_5 \cdot Q_4 \cdot \neg Q_3 \cdot \neg Q_2 \cdot Q_1 \cdot Q_0
+\]
+
+\subsection*{Ecuación para el patrón \textit{Cerrar}}
+El patrón de entrada para cerrar la puerta es \texttt{11101000}. La ecuación lógica para detectar este patrón es la siguiente:
+
+\[
+\text{CERRAR} = Q_7 \cdot Q_6 \cdot Q_5 \cdot \neg Q_4 \cdot Q_3 \cdot \neg Q_2 \cdot \neg Q_1 \cdot \neg Q_0
+\]
+
+\subsection*{Próximos pasos}
+Gracias a las ecuaciones obtenidas por medio de suma de productos con las tablas de verdad, se llego al siguiente ciruicuito combinatorio para reconocer las contraseñas.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{images/sim_decodifcador.png} % ruta del archivo
+    \caption{Circuito decodificador ABRIR y CERRAR la puerta simulado}
+    \label{fig:sensores}
+\end{figure}
+Donde se resalta que las señales simplemente se unen con una compuerta AND para obtener una sola señal de salida. Y tiene un LED para mostrar cuando llega señal de 1 lógico o no.
 
 \subsection*{Próximos pasos}
 \begin{itemize}
-    \item Confirmar el uso del 7 segmentos (representando con 1 y 2).
+    \item Confirmar el uso del 7 segmentos y como representar cada estado.
     \item Definir materiales por comprar para montar el circuito de manera física.
 \end{itemize}
 
 \section{Sesión 5 -- 9 de septiembre de 2025}
 \subsection*{Actividades realizadas}
 \begin{itemize}
-    \item Se terminó el circuito combinacional que detecta los patrones de entrada y salida de manera simulada.
     \item Se resolvieron problemas con la representación en el 7 segmentos, logrando usar $A$ para abrir y $C$ para cerrar.
     \item Se definió el uso de la tecnología TTL para el resto del proyecto.
     \item Se añadieron los archivos de simulación al repositorio dedicado al proyecto, para un mejor manejo de versiones.
 \end{itemize}
 
 \subsection*{Resultados obtenidos}
-Se finalizó la simulación del taller.
+Se realizó la representación de la $A$ y $C$. Siguiendo la logica del BCD (74LS48) y del circuito como tal, se propuso el uso de una compuerta XOR, para lograr representar en cada caso cuando fuese necesario una $A$ y un $C$
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{images/bcd_mod.png} % ruta del archivo
+    \caption{Circuito BCD simulado}
+    \label{fig:sensores}
+\end{figure}
 
 \subsection*{Próximos pasos}
 \begin{itemize}
@@ -154,4 +241,66 @@ Se finalizó la simulación del taller.
     \item El estudiante Fernando Fuchs trabajará en las tareas restantes (investigar sobre el motor y accionador de puerta, etc.).
 \end{itemize}
 
+
+\section{Sesión 6 -- 9 de septiembre de 2025}
+\subsection*{Actividades realizadas}
+\begin{itemize}
+    \item Se monta el circuito combinatorio para las contraseñas en la herramiente Tinkercad.
+\end{itemize}
+
+\subsection*{Resultados obtenidos}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{images/tinkercad.png} % ruta del archivo
+    \caption{Circuito en Tinkercad}
+    \label{fig:tinkercad}
+\end{figure}
+
+\subsection*{Próximos pasos}
+\begin{itemize}
+    \item El estudiante Fernando Fuchs montará el circuito en físico.
+\end{itemize}
+
+
+\section{Sesión 7 -- 10-11 de septiembre de 2025}
+\subsection*{Actividades realizadas}
+\begin{itemize}
+    \item Se monta el circuito combinatorio para las contraseñas en físico
+\end{itemize}
+
+\subsection*{Resultados obtenidos}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/fuchs1.jpg} % ruta del archivo
+    \caption{Circuito en Protoboard}
+    \label{fig:tinkercad}
+\end{figure}
+Se aclara, que se tuvieron problemas iniciales, debido a una mala conexión de resistencias de pulldown, así como mal uso del GND común, pero gracias a ayuda del profesor y de materiales consultados, se pudo realizar la correcta conexión de los circuitos combinatorios.
+
+\subsection*{Próximos pasos}
+\begin{itemize}
+    \item El estudiante Emanuel Chavarría Hernandez montará el circuito del BCD.
+\end{itemize}
+
+
+\section{Sesión 8 -- 13-15 de septiembre de 2025}
+\subsection*{Actividades realizadas}
+\begin{itemize}
+    \item Se monta el circuito combinatorio  + el circuito relacionado con el BCD y su representación con el 7 segmentos.
+\end{itemize}
+
+\subsection*{Resultados obtenidos}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{images/todo_real.jpg} % ruta del archivo
+    \caption{Circuito Completo}
+    \label{fig:todo_taller}
+\end{figure}
+Se aclara, que con la conexión del BCD se tuvieron problemas, pero de nuevo, consultando materiales se resolvieron los problemas.
+
+\subsection*{Próximos pasos}
+\begin{itemize}
+    \item Se termina la primera entrega del taller.
+    \item Se sigue con la implementación total del proyecto a manos de Emanuel Chavarría Hernandez y Fernando Fuchs Mora. Falta por terminar, el motor, los sensores y el serializador todo en conjunto.
+\end{itemize}
 \end{document}

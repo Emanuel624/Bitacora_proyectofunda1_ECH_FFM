@@ -178,13 +178,10 @@
     <comp lib="1" loc="(500,430)" name="AND Gate"/>
     <comp lib="1" loc="(610,340)" name="AND Gate"/>
     <comp lib="1" loc="(620,760)" name="AND Gate"/>
-    <comp lib="1" loc="(650,540)" name="XOR Gate">
-      <a name="facing" val="west"/>
-    </comp>
     <comp lib="1" loc="(850,540)" name="OR Gate"/>
     <comp lib="1" loc="(970,490)" name="AND Gate"/>
     <comp lib="1" loc="(970,590)" name="AND Gate"/>
-    <comp lib="13" loc="(1080,500)" name="L_7448_BCD_to_7_Seg_Display_Decoder_Driver_Common_Cathode_0cc7cad3"/>
+    <comp lib="13" loc="(1080,500)" name="L_7448_BCD_to_7_Seg_Display_Decoder_Driver_Common_Cathode_bf27d685"/>
     <comp lib="5" loc="(1220,150)" name="7-Segment Display">
       <a name="decimalPoint" val="false"/>
     </comp>
@@ -393,8 +390,6 @@
     <wire from="(650,340)" to="(740,340)"/>
     <wire from="(680,700)" to="(680,760)"/>
     <wire from="(680,760)" to="(740,760)"/>
-    <wire from="(710,520)" to="(740,520)"/>
-    <wire from="(710,560)" to="(740,560)"/>
     <wire from="(740,340)" to="(740,470)"/>
     <wire from="(740,470)" to="(740,520)"/>
     <wire from="(740,470)" to="(920,470)"/>
