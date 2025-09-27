@@ -143,7 +143,7 @@ Se contó con el circuito serializador de manera preliminar, simulado.
 \end{itemize}
 
 \subsection*{Resultados obtenidos}
-De manera especifica se va a mostrar el desarrollo teorico para el proceso del circuito combinatorio para recibir la contraseña de abrir y cerrar la puerta.
+De manera especifica se va a mostrar el desarrollo teórico para el proceso del circuito combinatorio para recibir la contraseña de abrir y cerrar la puerta.
 \section*{Definición de los Patrones}
 El sistema debe reconocer dos patrones de entrada:
 
@@ -204,7 +204,7 @@ El patrón de entrada para cerrar la puerta es \texttt{11101000}. La ecuación l
 \]
 
 \subsection*{Próximos pasos}
-Gracias a las ecuaciones obtenidas por medio de suma de productos con las tablas de verdad, se llego al siguiente ciruicuito combinatorio para reconocer las contraseñas.
+Gracias a las ecuaciones obtenidas por medio de suma de productos con las tablas de verdad, se llego al siguiente circuito combinatorio para reconocer las contraseñas.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{images/sim_decodifcador.png} % ruta del archivo
@@ -228,7 +228,7 @@ Donde se resalta que las señales simplemente se unen con una compuerta OR para 
 \end{itemize}
 
 \subsection*{Resultados obtenidos}
-Se realizó la representación de la $A$ y $C$. Siguiendo la logica del BCD (74LS48) y del circuito como tal, se propuso el uso de una compuerta XOR, para lograr representar en cada caso cuando fuese necesario una $A$ y un $C$
+Se realizó la representación de la $A$ y $C$. Siguiendo la lógica del BCD (74LS48) y del circuito como tal, se propuso el uso de una compuerta XOR, para lograr representar en cada caso cuando fuese necesario una $A$ y un $C$
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{images/bcd_mod.png} % ruta del archivo
@@ -247,7 +247,7 @@ Se realizó la representación de la $A$ y $C$. Siguiendo la logica del BCD (74L
 \section{Sesión 6 -- 9 de septiembre de 2025}
 \subsection*{Actividades realizadas}
 \begin{itemize}
-    \item Se monta el circuito combinatorio para las contraseñas en la herramiente Tinkercad.
+    \item Se monta el circuito combinatorio para las contraseñas en la herramienta Tinkercad.
 \end{itemize}
 
 \subsection*{Resultados obtenidos}
@@ -281,7 +281,7 @@ Se aclara, que se tuvieron problemas iniciales, debido a una mala conexión de r
 
 \subsection*{Próximos pasos}
 \begin{itemize}
-    \item El estudiante Emanuel Chavarría Hernandez montará el circuito del BCD.
+    \item El estudiante Emanuel Chavarría Hernández montará el circuito del BCD.
 \end{itemize}
 
 
@@ -303,6 +303,107 @@ Se aclara, que con la conexión del BCD se tuvieron problemas, pero de nuevo, co
 \subsection*{Próximos pasos}
 \begin{itemize}
     \item Se termina la primera entrega del taller.
-    \item Se sigue con la implementación total del proyecto a manos de Emanuel Chavarría Hernandez y Fernando Fuchs Mora. Falta por terminar, el motor, los sensores y el serializador todo en conjunto.
+    \item Se sigue con la implementación total del proyecto a manos de Emanuel Chavarría Hernández y Fernando Fuchs Mora. Falta por terminar, el motor, los sensores y el serializador todo en conjunto.
 \end{itemize}
+
+
+\section{Sesión 9 -- 16-18 de septiembre de 2025}
+\subsection*{Actividades realizadas}
+\begin{itemize}
+    \item De primera manera se monta el circuito serializador de forma separada utilizando el circuito integrado 74LS48 y representando sus salidas con 8 leds para mostrar el estado actual
+    \item Seguidamente se añade el sensor para que se reciba como entrada en el serializador
+    \item Se genera una señal de tipo reloj por medio de un Arduino UNO para permitir el funcionamiento del circuito integrado del serializador.
+\end{itemize}
+
+\subsection*{Resultados obtenidos}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/seri_real.png} % ruta del archivo
+    \caption{Circuito serilizador + sensor}
+    \label{fig:todo_taller}
+\end{figure}
+Se aclara lo siguiente. Al inicio se tuvieron bastantes errores al conectar el sensor al serialziador ya que el sensor daba un pulso sumamente pequeño al recibir un golpe. Despues de inter solucionarlo y consultarlo con el profesor, se llego a la conclusion de pasar la señal del sensor a través de un Arduino UNO para procesarla y permitir un correcto funcionamiento del circuito.
+
+\subsection*{Próximos pasos}
+\begin{itemize}
+    \item Unir el serializador y el sensor con el circuito combinatorio 
+    \item Investigar sobre como conectar el motor al circuito (proceso de desacople y activación)
+\end{itemize}
+
+
+\section{Sesión 10 -- 19-23 de septiembre de 2025}
+\subsection*{Actividades realizadas}
+\begin{itemize}
+    \item Se une la lógica del serializador con el circuito combinatorio
+    \item Se monta un puente H con transistores 2N2222
+    \item Se monta el desacople con un transistor 2N2222
+\end{itemize}
+
+\subsection*{Resultados obtenidos}
+Se aclara lo siguiente con respecto a unir el serializador + sensor con el circuito combinatorio. Se tuvieron varios errores
+\begin{itemize}
+    \item Primero como grupo se quitaron las resistencias de pulldown que se tenían con el dipswitch pensando que ya no iban a ser necesarias. Esto ocasionó proble,aas ya que el circuito combinatorio dejo de servir
+    \item Después de conectar de nuevo las resistencias de pulldown y agregar las LEDS a las ocho salidas paralelas del 74LS48 el circuito seguía sin servir.
+    \item Después de revisar la literatura e intentar diferentes soluciones, se vio que debido a no tener conectadas resistencias a las LEDS, al circuito no le estaba llegando la suficiente corriente para funcionar.
+\end{itemize}
+
+Por otro lado, por parte de la conexión al motor con el resto del proyecto se tuvieron los siguientes problemas.
+\begin{itemize}
+    \item Al intentar unir el circuito combinatorio con el desacople y a su vez con el puente H, se tiene problemas ya que no funciona
+    \item Después de varios intentos no se pudo solucionar
+\end{itemize}
+
+\subsection*{Próximos pasos}
+\begin{itemize}
+    \item Buscar una solución para la conexión y correcto funcionamiento del motor
+    \item Una vez teniendo el toda la lógica terminada, comenzar con el proceso de fabricación de la maqueta.
+\end{itemize}
+
+
+\section{Sesión 11 -- 23-24 de septiembre de 2025}
+\subsection*{Actividades realizadas}
+\begin{itemize}
+    \item Se solucionan los problemas con el motor y su conexión con el resto del circuito.
+\end{itemize}
+
+\subsection*{Resultados obtenidos}
+Se aclara lo siguiente con respecto al motor y las soluciones obtenidas.
+\begin{itemize}
+    \item Después de consultar con los compañeros del curso así como con el profesor se concluyó en utilizar el driver L298N el cuanta con desacople y el puente H integrado en un solo módulo
+    \item Una vez implementado de manera física con todo el circuito el motor funciona correctamente
+\end{itemize}
+Se adjunta imagen del modulo utilizado a continuación.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{images/L298N.png} % ruta del archivo
+    \caption{Modulo puente H + desacople L298N}
+    \label{fig:L298N}
+\end{figure}
+
+\subsection*{Próximos pasos}
+\begin{itemize}
+    \item Realizar la maqueta en base a la funcionalidad del circuito
+\end{itemize}
+
+
+\section{Sesión 12 -- 24-25 de septiembre de 2025}
+\subsection*{Actividades realizadas}
+\begin{itemize}
+    \item Se concluye con el proyecto.
+\end{itemize}
+
+\subsection*{Resultados obtenidos}
+Se aclara lo siguiente con respecto a la finalización del proyecto. Después de terminar la parte lógica y técnica del proyecto, se obtuvo el siguiente problema. 
+\begin{itemize}
+    \item El motor utilizado cuenta con poco torque, lo que imposibilita el mover cargas muy pesadas. Esto conlleva que el hacer la maqueta de la puerta abriéndose fuese imposible, sin conseguir un nuevo motor, lo cual por cuestiones de tiempo y de recursos económicos el grupo de trabajo decidió no realizar.
+    \item Como alternativa para mostrar el correcto funcionamiento del motor se le colocó una pieza minima para poder mostrar el giro del motor.
+\end{itemize}
+Por lo tanto el proyecto de manera físico obtuvo la siguiente forma final.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{images/final_pp.jpg} % ruta del archivo
+    \caption{Forma final del proyecto finalizado}
+    \label{fig:CONCLU}
+\end{figure}
+
 \end{document}
