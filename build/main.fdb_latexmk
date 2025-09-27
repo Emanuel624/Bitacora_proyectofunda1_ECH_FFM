@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex build/main"] 0 "build/main.aux" "build/main.bbl" "build/main" 1759013974.45118 -1
+["bibtex build/main"] 0 "build/main.aux" "build/main.bbl" "build/main" 1759015475.75959 -1
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/bibtex/bib/feupphdteses/references.bib" 1366811700 2206 985e03fb36d872d306e76cfacc160693 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/bibtex/bst/biblatex/biblatex.bst" 1679055682 65484 b7949c47a88ed6dca66ebc7a04577312 ""
-  "build/main.aux" 1759013973 4588 ae2f3dd3016f87342fb0fb7c6b573d4d "pdflatex"
-  "c:/Users/Usuario/Desktop/TEC II 2025/fundamentos/bitacora/Bitacora_proyectofunda1_ECH_FFM/build/main-blx.bib" 1759013973 343 1611d3bac8f724313c9b8207b0d00714 ""
+  "build/main.aux" 1759015474 4588 2bf6014a6b87399e39ac354afa72eea2 "pdflatex"
+  "c:/Users/Usuario/Desktop/TEC II 2025/fundamentos/bitacora/Bitacora_proyectofunda1_ECH_FFM/build/main-blx.bib" 1759015474 343 1611d3bac8f724313c9b8207b0d00714 ""
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1759013971.80817 "c:/Users/Usuario/Desktop/TEC II 2025/fundamentos/bitacora/Bitacora_proyectofunda1_ECH_FFM/main.tex" "build/main.pdf" "main" 1759013974.45222 2
+["pdflatex"] 1759015473.10533 "c:/Users/Usuario/Desktop/TEC II 2025/fundamentos/bitacora/Bitacora_proyectofunda1_ECH_FFM/main.tex" "build/main.pdf" "main" 1759015475.76077 2
   "C:/Users/Usuario/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1756509776 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Usuario/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1756508968 24225990 3b47421d76aec042a618ef6612be1249 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc" 1256929440 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -133,10 +133,10 @@
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/tools/longtable.sty" 1700599895 12935 94a3291359b5f73ff1b19345a6983105 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "build/main.aux" 1759013973 4588 ae2f3dd3016f87342fb0fb7c6b573d4d "pdflatex"
+  "build/main.aux" 1759015474 4588 2bf6014a6b87399e39ac354afa72eea2 "pdflatex"
   "build/main.bbl" 1759004857 0 d41d8cd98f00b204e9800998ecf8427e "bibtex build/main"
-  "build/main.out" 1759013973 2991 edd7e7304f0da4d4e8401190fd8e71d6 "pdflatex"
-  "c:/Users/Usuario/Desktop/TEC II 2025/fundamentos/bitacora/Bitacora_proyectofunda1_ECH_FFM/main.tex" 1759013966 17451 ebfd36e7706473cdfb4a4c997aa76930 ""
+  "build/main.out" 1759015474 2991 edd7e7304f0da4d4e8401190fd8e71d6 "pdflatex"
+  "c:/Users/Usuario/Desktop/TEC II 2025/fundamentos/bitacora/Bitacora_proyectofunda1_ECH_FFM/main.tex" 1759015466 17608 2d5bc5c27b938ed798699612aae921bb ""
   "images/L298N.png" 1759012680 265647 2724b70a8ca103750a67cb2c7b63be36 ""
   "images/bcd_mod.png" 1758216400 36196 3853de668777c6eb619961b57c294967 ""
   "images/final_pp.jpg" 1759010752 275941 02cfc5652895fad7e2ebf8003b2d54e2 ""
@@ -148,7 +148,7 @@
   "images/tinkercad.png" 1758216770 145479 987486ab7fbd7d847e76ecd281f11c57 ""
   "images/todo_real.jpg" 1758217687 249860 e3c7f6971da7ccee47e6f3a61556f38f ""
   "main.aux" 0 -1 0 ""
-  "main.tex" 1759013966 17451 ebfd36e7706473cdfb4a4c997aa76930 ""
+  "main.tex" 1759015466 17608 2d5bc5c27b938ed798699612aae921bb ""
   (generated)
   "build/main-blx.bib"
   "build/main.aux"
