@@ -310,8 +310,8 @@ Se aclara, que con la conexión del BCD se tuvieron problemas, pero de nuevo, co
 \section{Sesión 9 -- 16-18 de septiembre de 2025}
 \subsection*{Actividades realizadas}
 \begin{itemize}
-    \item De primera manera se monta el circuito serializador de forma separada utilizando el circuito integrado 74LS48 y representando sus salidas con 8 leds para mostrar el estado actual
-    \item Seguidamente se añade el sensor para que se reciba como entrada en el serializador
+    \item De primera manera se monta el circuito serializador de forma separada utilizando el circuito integrado 74LS48 y representando sus salidas con 8 leds para mostrar el estado actual.
+    \item Seguidamente se añade el sensor para que se reciba como entrada en el serializador.
     \item Se genera una señal de tipo reloj por medio de un Arduino UNO para permitir el funcionamiento del circuito integrado del serializador.
 \end{itemize}
 
@@ -322,40 +322,40 @@ Se aclara, que con la conexión del BCD se tuvieron problemas, pero de nuevo, co
     \caption{Circuito serilizador + sensor}
     \label{fig:todo_taller}
 \end{figure}
-Se aclara lo siguiente. Al inicio se tuvieron bastantes errores al conectar el sensor al serialziador ya que el sensor daba un pulso sumamente pequeño al recibir un golpe. Despues de inter solucionarlo y consultarlo con el profesor, se llego a la conclusion de pasar la señal del sensor a través de un Arduino UNO para procesarla y permitir un correcto funcionamiento del circuito.
+Se aclara lo siguiente. Al inicio se tuvieron bastantes errores al conectar el sensor al serialziador ya que el sensor daba un pulso sumamente pequeño al recibir un golpe. Después de inter solucionarlo y consultarlo con el profesor, se llego a la conclusión de pasar la señal del sensor a través de un Arduino UNO para procesarla y permitir un correcto funcionamiento del circuito.
 
 \subsection*{Próximos pasos}
 \begin{itemize}
-    \item Unir el serializador y el sensor con el circuito combinatorio 
-    \item Investigar sobre como conectar el motor al circuito (proceso de desacople y activación)
+    \item Unir el serializador y el sensor con el circuito combinatorio.
+    \item Investigar sobre como conectar el motor al circuito (proceso de desacople y activación).
 \end{itemize}
 
 
 \section{Sesión 10 -- 19-23 de septiembre de 2025}
 \subsection*{Actividades realizadas}
 \begin{itemize}
-    \item Se une la lógica del serializador con el circuito combinatorio
-    \item Se monta un puente H con transistores 2N2222
-    \item Se monta el desacople con un transistor 2N2222
+    \item Se une la lógica del serializador con el circuito combinatorio.
+    \item Se monta un puente H con transistores 2N2222.
+    \item Se monta el desacople con un transistor 2N2222.
 \end{itemize}
 
 \subsection*{Resultados obtenidos}
-Se aclara lo siguiente con respecto a unir el serializador + sensor con el circuito combinatorio. Se tuvieron varios errores
+Se aclara lo siguiente con respecto a unir el serializador + sensor con el circuito combinatorio. Se tuvieron varios errores.
 \begin{itemize}
-    \item Primero como grupo se quitaron las resistencias de pulldown que se tenían con el dipswitch pensando que ya no iban a ser necesarias. Esto ocasionó proble,aas ya que el circuito combinatorio dejo de servir
+    \item Primero como grupo se quitaron las resistencias de pulldown que se tenían con el DIP switch pensando que ya no iban a ser necesarias. Esto ocasionó problemas ya que el circuito combinatorio dejo de servir.
     \item Después de conectar de nuevo las resistencias de pulldown y agregar las LEDS a las ocho salidas paralelas del 74LS48 el circuito seguía sin servir.
     \item Después de revisar la literatura e intentar diferentes soluciones, se vio que debido a no tener conectadas resistencias a las LEDS, al circuito no le estaba llegando la suficiente corriente para funcionar.
 \end{itemize}
 
 Por otro lado, por parte de la conexión al motor con el resto del proyecto se tuvieron los siguientes problemas.
 \begin{itemize}
-    \item Al intentar unir el circuito combinatorio con el desacople y a su vez con el puente H, se tiene problemas ya que no funciona
-    \item Después de varios intentos no se pudo solucionar
+    \item Al intentar unir el circuito combinatorio con el desacople y a su vez con el puente H, se tiene problemas ya que no funciona.
+    \item Después de varios intentos no se pudo solucionar.
 \end{itemize}
 
 \subsection*{Próximos pasos}
 \begin{itemize}
-    \item Buscar una solución para la conexión y correcto funcionamiento del motor
+    \item Buscar una solución para la conexión y correcto funcionamiento del motor.
     \item Una vez teniendo el toda la lógica terminada, comenzar con el proceso de fabricación de la maqueta.
 \end{itemize}
 
@@ -369,8 +369,8 @@ Por otro lado, por parte de la conexión al motor con el resto del proyecto se t
 \subsection*{Resultados obtenidos}
 Se aclara lo siguiente con respecto al motor y las soluciones obtenidas.
 \begin{itemize}
-    \item Después de consultar con los compañeros del curso así como con el profesor se concluyó en utilizar el driver L298N el cuanta con desacople y el puente H integrado en un solo módulo
-    \item Una vez implementado de manera física con todo el circuito el motor funciona correctamente
+    \item Después de consultar con los compañeros del curso así como con el profesor se concluyó en utilizar el driver L298N el cuanta con desacople y el puente H integrado en un solo módulo.
+    \item Una vez implementado de manera física con todo el circuito el motor funciona correctamente.
 \end{itemize}
 Se adjunta imagen del modulo utilizado a continuación.
 \begin{figure}[H]
@@ -382,7 +382,7 @@ Se adjunta imagen del modulo utilizado a continuación.
 
 \subsection*{Próximos pasos}
 \begin{itemize}
-    \item Realizar la maqueta en base a la funcionalidad del circuito
+    \item Realizar la maqueta en base a la funcionalidad del circuito.
 \end{itemize}
 
 
@@ -396,9 +396,9 @@ Se adjunta imagen del modulo utilizado a continuación.
 Se aclara lo siguiente con respecto a la finalización del proyecto. Después de terminar la parte lógica y técnica del proyecto, se obtuvo el siguiente problema. 
 \begin{itemize}
     \item El motor utilizado cuenta con poco torque, lo que imposibilita el mover cargas muy pesadas. Esto conlleva que el hacer la maqueta de la puerta abriéndose fuese imposible, sin conseguir un nuevo motor, lo cual por cuestiones de tiempo y de recursos económicos el grupo de trabajo decidió no realizar.
-    \item Como alternativa para mostrar el correcto funcionamiento del motor se le colocó una pieza minima para poder mostrar el giro del motor.
+    \item Como alternativa para mostrar el correcto funcionamiento del motor se le colocó una pieza mínima para poder mostrar el giro del motor.
 \end{itemize}
-Por lo tanto el proyecto de manera físico obtuvo la siguiente forma final.
+Por lo tanto el proyecto de manera física obtuvo la siguiente forma final.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{images/final_pp.jpg} % ruta del archivo
