@@ -181,7 +181,7 @@
     <comp lib="1" loc="(850,540)" name="OR Gate"/>
     <comp lib="1" loc="(970,490)" name="AND Gate"/>
     <comp lib="1" loc="(970,590)" name="AND Gate"/>
-    <comp lib="13" loc="(1080,500)" name="L_7448_BCD_to_7_Seg_Display_Decoder_Driver_Common_Cathode_22e8fb1e"/>
+    <comp lib="13" loc="(1080,500)" name="L_7448_BCD_to_7_Seg_Display_Decoder_Driver_Common_Cathode_21fc1ffc"/>
     <comp lib="5" loc="(1220,150)" name="7-Segment Display">
       <a name="decimalPoint" val="false"/>
     </comp>

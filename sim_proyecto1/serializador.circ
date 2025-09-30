@@ -5,6 +5,7 @@
   <lib desc="#Wiring" name="0">
     <tool name="Pin">
       <a name="appearance" val="classic"/>
+      <a name="output" val="true"/>
     </tool>
   </lib>
   <lib desc="#Gates" name="1"/>
@@ -90,9 +91,10 @@
       <a name="facing" val="north"/>
     </comp>
     <comp lib="6" loc="(120,190)" name="74164">
-      <a name="ShowInternalStructure" val="true"/>
       <a name="VccGndPorts" val="true"/>
     </comp>
+    <wire from="(130,120)" to="(130,130)"/>
+    <wire from="(130,120)" to="(230,120)"/>
     <wire from="(130,130)" to="(130,160)"/>
     <wire from="(130,220)" to="(130,260)"/>
     <wire from="(130,260)" to="(140,260)"/>
@@ -112,6 +114,7 @@
     <wire from="(210,150)" to="(290,150)"/>
     <wire from="(210,220)" to="(210,360)"/>
     <wire from="(220,100)" to="(250,100)"/>
+    <wire from="(230,120)" to="(230,160)"/>
     <wire from="(230,220)" to="(230,360)"/>
     <wire from="(250,100)" to="(250,160)"/>
     <wire from="(250,220)" to="(250,270)"/>
